@@ -1,10 +1,11 @@
 import React from "react";
+import Products from "./components/Products";
 
 const App = () => {
   return (
     <div>
       {/* TODO: Code here */}
-      <h1>App</h1>
+      <Products />
     </div>
   );
 };
