@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack, HStack, VStack } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import { Text, Image, Box, Heading, Tag, TagLabel } from "@chakra-ui/react";
 
 const Product = () => {
