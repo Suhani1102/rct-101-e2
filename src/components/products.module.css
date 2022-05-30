@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-color: var(--chakra-colors-gray-200);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 16px;
+  padding: var(--chakra-space-4);
+  margin-top: var(--chakra-space-4);
+}
