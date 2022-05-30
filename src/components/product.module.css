@@ -1,0 +1,7 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--chakra-shadows-2xl);
+  border-radius: var(--chakra-radii-lg);
+  padding: var(--chakra-space-6);
+}

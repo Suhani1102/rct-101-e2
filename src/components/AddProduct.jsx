@@ -23,6 +23,7 @@ const AddProduct = () => {
   // const Select = () => <div />;
   // const RadioGroup = () => <div />;
   // const Radio = () => <div />;
+  const [value, setValue] = React.useState("1");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const finalRef = React.useRef();
 
@@ -49,7 +50,7 @@ const AddProduct = () => {
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>Title</FormLabel>
-              <Input data-cy="add-product-title" />
+              <Input data-cy="add-product-title" placeholder="Title" />
             </FormControl>
             <FormControl>
               <FormLabel>Category</FormLabel>
@@ -61,15 +62,25 @@ const AddProduct = () => {
             </FormControl>
             <FormControl>
               <FormLabel>Gender</FormLabel>
-              <RadioGroup data-cy="add-product-gender">
-                <Radio data-cy="add-product-gender-male">Male</Radio>
-                <Radio data-cy="add-product-gender-female">Female</Radio>
-                <Radio data-cy="add-product-gender-unisex">Unisex</Radio>
+              <RadioGroup
+                data-cy="add-product-gender"
+                onChange={setValue}
+                value={value}
+              >
+                <Radio data-cy="add-product-gender-male" value="1">
+                  Male
+                </Radio>
+                <Radio data-cy="add-product-gender-female" value="2">
+                  Female
+                </Radio>
+                <Radio data-cy="add-product-gender-unisex" value="3">
+                  Unisex
+                </Radio>
               </RadioGroup>
             </FormControl>
             <FormControl>
               <FormLabel>Price</FormLabel>
-              <Input data-cy="add-product-price" />
+              <Input data-cy="add-product-price" placeholder="Price" />
             </FormControl>
             <ModalFooter>
               <Button colorScheme="teal" data-cy="add-product-submit-button">

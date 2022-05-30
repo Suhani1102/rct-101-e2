@@ -9,24 +9,27 @@ import styles from "./products.module.css";
 
 const Products = () => {
   // TODO: Remove below const and instead import them from chakra
-  // const [page, setPage] = useState(1);
-  // const [totalCount, setTotalCount] = useState(0);
+  const [page, setPage] = useState(1);
+  const [totalCount, setTotalCount] = useState(0);
   const [products, setProducts] = useState([]);
+
+  const handlePagination = (num) => {
+    setPage(num);
+  };
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/products?_page=1&_limit=3`)
+      .get(`http://localhost:8080/products?_page=${page}&_limit=3`)
       .then((r) => {
         setProducts(r.data);
-        // setTotalCount(Number(r.headers["x-total-count"]));
+        setTotalCount(Number(r.headers["x-total-count"]));
       })
       .catch(function (error) {
         // handle error
         console.log(error);
       });
-  }, []);
+  }, [page]);
 
-  console.log(products);
   return (
     <Flex className={styles.container}>
       {/*  AddProduct */}
@@ -34,12 +37,16 @@ const Products = () => {
       <Grid templateColumns="repeat(3, 1fr)" gap={6}>
         {products.map((item) => (
           <GridItem>
-            <Product item={item} />
+            <Product key={item.id} item={item} />
           </GridItem>
         ))}
       </Grid>
       {/* Pagination */}
-      <Pagination />
+      <Pagination
+        page={page}
+        updatePage={handlePagination}
+        count={totalCount}
+      />
     </Flex>
   );
 };

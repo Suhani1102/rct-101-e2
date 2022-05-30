@@ -1,9 +1,10 @@
 import React from "react";
 import { Stack } from "@chakra-ui/react";
 import { Text, Image, Box, Heading, Tag, TagLabel } from "@chakra-ui/react";
+import styles from "./product.module.css";
 
 const Product = (props) => {
-  console.log(props.item);
+  // console.log(props.item);
   // TODO: Remove below const and instead import them from chakra
   // const Text = () => <div />;
   // const Image = () => <div />;
@@ -14,7 +15,7 @@ const Product = (props) => {
   // const TagLabel = () => <div />;
   // console.log(products);
   return (
-    <Stack data-cy="product">
+    <Stack data-cy="product" className={styles.card}>
       <Image data-cy="product-image" src={props.item.imageSrc} />
       <Text data-cy="product-category">{props.item.category}</Text>
       <Tag>
