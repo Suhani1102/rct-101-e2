@@ -10,5 +10,5 @@
   border-style: solid;
   border-radius: 16px;
   padding: var(--chakra-space-4);
-  margin-top: var(--chakra-space-4);
+  margin: var(--chakra-space-4);
 }

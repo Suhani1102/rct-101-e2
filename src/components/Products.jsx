@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Pagination from "./Pagination";
 import AddProduct from "./AddProduct";
 import Product from "./Product";
-import { Flex, Spacer } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { Grid, GridItem } from "@chakra-ui/react";
 import axios from "axios";
 import styles from "./products.module.css";
@@ -15,7 +15,7 @@ const Products = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/products?_page=1&_limit=5`)
+      .get(`http://localhost:8080/products?_page=1&_limit=3`)
       .then((r) => {
         setProducts(r.data);
         // setTotalCount(Number(r.headers["x-total-count"]));
